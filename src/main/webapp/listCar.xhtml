@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>List of Cars</title>
+        <style type="text/css">
+            .successText {
+                color: green;
+                margin: 12px;
+                font-weight: bold;
+            }
+        </style>
+    </h:head>
+    <h:body>
+        <h2 style="color:tomato;">List of all car offers</h2>
+        <h:form>
+            <h:dataTable border="1" value="#{arraysHandler.cars}" var="car">
+                <h:column>
+                    <f:facet name="header">Id</f:facet>
+                    #{arraysHandler.cars.indexOf(car)+1}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">NameOI</f:facet>
+                    #{car.nameOI}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Brand</f:facet>
+                    #{car.brand}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Auction</f:facet>
+                    #{car.is_auction}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Price</f:facet>
+                    #{car.price}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Weight</f:facet>
+                    #{car.weight}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Account</f:facet>
+                    #{car.account.nick}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Available</f:facet>
+                    #{car.is_available}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Year</f:facet>
+                    #{car.year}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Power</f:facet>
+                    #{car.power}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Passengers</f:facet>
+                    #{car.passengers}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Transmission</f:facet>
+                    #{car.transmission}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Country</f:facet>
+                    #{car.country}
+                </h:column>
+            </h:dataTable>
+            <br/>
+            <h:commandButton value="Back to home" action="home"/>
+        </h:form>
+    </h:body>
+</html>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+    <title>New Car</title>
+    <style type="text/css">
+        .textPlacement {
+            margin: 12px;
+        }
+        .msg {
+            color: purple;
+            font-weight: bold;
+        }
+    </style>
+</h:head>
+<h:body>
+    <h2 style="color:tomato;">Create new car offer</h2>
+    <h:form id="CarOffer">
+        <div id="nameOIDiv" class="textPlacement">
+        <h:outputLabel value="nameOI"/>
+        <h:inputText id="carNameOI" value = "#{car.nameOI}"/>
+        <h:message for="carNameOI" styleClass="msg"/>
+        </div>
+        <div id="brandDiv" class="textPlacement">
+        <h:outputLabel value="brand"/>
+        <h:inputText id="carBrand" value="#{car.brand}"/>
+        <h:message for="carBrand" styleClass="msg"/>
+        </div>
+        <div id="auctionDiv" class="textPlacement">
+        <h:outputLabel value="auction"/>
+        <h:inputText id="carAuction" value = "#{car.is_auction}"/>
+        <h:message for="carAuction" styleClass="msg"/>
+        </div>
+        <div id="priceDiv" class="textPlacement">
+        <h:outputLabel value="price"/>
+        <h:inputText id="carPrice" value = "#{car.price}"/>
+        <h:message for="carPrice" styleClass="msg"/>
+        </div>
+        <div id="weightDiv" class="textPlacement">
+        <h:outputLabel value="weight"/>
+        <h:inputText id="carWeight" value = "#{car.weight}"/>
+        <h:message for="carWeight" styleClass="msg"/>
+        </div>
+        <div id="availableDiv" class="textPlacement">
+        <h:outputLabel value="available"/>
+        <h:inputText id="carAvailable" value = "#{car.is_available}"/>
+        <h:message for="carAvailable" styleClass="msg"/>
+        </div>
+        <div id="yeaDivr" class="textPlacement">
+        <h:outputLabel value="year"/>
+        <h:inputText id="carYear" value = "#{car.year}"/>
+        <h:message for="carYear" styleClass="msg"/>
+        </div>
+        <div id="powerDiv" class="textPlacement">
+        <h:outputLabel value="power"/>
+        <h:inputText id="carPower" value = "#{car.power}"/>
+        <h:message for="carPower" styleClass="msg"/>
+        </div>
+        <div id="passengersDiv" class="textPlacement">
+        <h:outputLabel value="passengers"/>
+        <h:inputText id="carPassengers" value = "#{car.passengers}"/>
+        <h:message for="carPassengers" styleClass="msg"/>
+        </div>
+        <div id="transmissionDiv" class="textPlacement">
+        <h:outputLabel value="transmission"/>
+        <h:inputText id="carTransmission" value = "#{car.transmission}"/>
+        <h:message for="carTransmission" styleClass="msg"/>
+        </div>
+        <div id="countryDiv" class="textPlacement">
+        <h:outputLabel value="country"/>
+        <h:inputText id="carCountry" value = "#{car.country}"/>
+        <h:message for="carCountry" styleClass="msg"/>
+        </div>
+        <h:commandButton value="Create" action="#{arraysHandler.addCar(car)}"/>
+    </h:form>
+</h:body>
+</html>

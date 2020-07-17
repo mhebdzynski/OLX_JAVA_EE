@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core" xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+<h:head>
+    <title>Login</title>
+    <style type="text/css">
+        .textPlacement {
+            margin: 12px;
+        }
+        .msg {
+            color: purple;
+            font-weight: bold;
+        }
+    </style>
+</h:head>
+<h:body>
+    <h2 style="color:tomato;">Create new account</h2>
+    <div class="row col-md-10 col-md-offset-3">
+        <h:form id="loginForm">
+            <div id="nickDiv" class="textPlacement">
+            <h:outputLabel value="nick "/>
+            <h:inputText id="lseaNick" value="#{obj.nick}"/>
+            <h:message for="lseaNick" styleClass="msg"/>
+            </div>
+            <div id="passwordDiv" class="textPlacement">
+            <h:outputLabel value="password "/>
+            <h:inputSecret id="lseaPassword" value="#{obj.password}"/>
+            <h:message for="lseaPassword" styleClass="msg"/>
+            </div>
+            <div id="nameDiv" class="textPlacement">
+            <h:outputLabel value="name "/>
+            <h:inputText id="lseaName" value = "#{obj.name}"/>
+            <h:message for="lseaName" styleClass="msg"/>
+            </div>
+            <div id="surnameDiv" class="textPlacement">
+            <h:outputLabel value="surname "/>
+            <h:inputText id="lseaSurname" value = "#{obj.surname}"/>
+            <h:message for="lseaSurname" styleClass="msg"/>
+            </div>
+            <div id="ageDiv" class="textPlacement">
+            <h:outputLabel value="age "/>
+            <h:inputText id="lseaAge" value = "#{obj.age}"/>
+            <h:message for="lseaAge" styleClass="msg"/>
+            </div>
+            <div id="moneyDiv" class="textPlacement">
+            <h:outputLabel value="money "/>
+            <h:inputText id="lseaMoney" value = "#{obj.money}"/>
+            <h:message for="lseaMoney" styleClass="msg"/>
+            </div>
+            <h:commandButton value="Submit" action="#{arraysHandler.addProfile(obj)}"/>
+<!--EJBs -->
+            <div>
+                <c:if test="#{obj.ejbClient.FE.EJBB eq true}">
+                    <h2>First is working</h2>
+                    #{obj.ejbClient.FE.message}
+                    <h:commandButton value="Change bools" action="#{obj.ejbClient.changeBools()}"/>
+                </c:if>
+                <c:if test="#{obj.ejbClient.SE.EJBB eq true}">
+                    <h2>Second is working</h2>
+                    #{obj.ejbClient.SE.message}
+                    <h:commandButton value="Change bools" action="#{obj.ejbClient.changeBools()}"/>
+                </c:if>
+            </div>
+
+        </h:form>
+    </div>
+</h:body>
+</html>
